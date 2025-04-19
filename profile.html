@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <link href="profile.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -29,20 +30,60 @@
 
     <div class="container">
         <div class="sidebar">
-            <!-- Optional Sidebar Content -->
+            <a href="#edit-profile" title="Edit Profile" onclick="showSection('profile-section')"><i
+                    class='bx bx-pencil'></i></a>
+            <a href="#transaction-history" title="Transaction History" onclick="showSection('transaction-section')"><i
+                    class='bx bx-transfer'></i></a>
+            <a href="#chat" title="Chat" onclick="showSection('chat-section')"><i class='bx bx-message-dots'></i></a>
         </div>
-
         <div class="main">
-            <div class="profile-section">
+            <div class="profile-section hidden">
                 <h2>Nitin Sharma</h2>
                 <p class="user-role">Verified Renter & Lender</p>
-                <button>View My Listings</button>
+                <button id="toggleListingsBtn" onclick="toggleListings()">View My Listings</button>
+
                 <div class="info-box">📧 Email: nitin@example.com</div>
                 <div class="info-box">📞 Phone: +91 9876543210</div>
                 <div class="info-box">📍 Location: Mumbai, India</div>
                 <div class="info-box">👤 Member since: Jan 2024</div>
                 <div class="info-box">✅ Verified ID: Yes</div>
                 <div class="info-box">🌟 Rating: 4.8 / 5</div>
+            </div>
+            <div class="listings-section">
+                <h2>My Rentings </h2>
+                <div class="listing-item">
+                    <div>
+                        <p><strong>Canon DSLR Camera</strong></p>
+                        <p><strong>Price:</strong> ₹499/day</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <img src="dslr.webp">
+                </div>
+                <div class="listing-item">
+                    <div>
+                        <p><strong>Camping Tent 4-Person</strong></p>
+                        <p><strong>Price:</strong> ₹299/day</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <img src="tent.webp">
+                </div>
+                <div class="listing-item">
+                    <div>
+                        <p><strong>Power Drill Set</strong></p>
+                        <p><strong>Price:</strong> ₹199/day</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <img src="drill.jpg">
+                </div>
+                <div class="listing-item">
+                    <div>
+                        <p><strong>Sony Bluetooth Speaker</strong></p>
+                        <p><strong>Price:</strong> ₹599/weekend</p>
+                        <p><strong>Status:</strong> Rented</p>
+                    </div>
+                    <img src="bt.png">
+                </div>
+
             </div>
             <div class="pp-content-section">
 
@@ -96,9 +137,99 @@
                 </div>
 
             </div>
+            <div class="my-listings-section hidden" id="myListingsSection">
+                <h2>My Listings</h2>
+
+                <div class="listing-card">
+                    <div class="listing-info">
+                        <h3>Canon DSLR Camera</h3>
+                        <p><strong>Price:</strong> ₹499/day</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <div class="calendar">
+                        <p><strong>Available Dates:</strong></p>
+                        <ul>
+                            <li>April 22, 2024</li>
+                            <li>April 25, 2024</li>
+                            <li>April 30, 2024</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="listing-card">
+                    <div class="listing-info">
+                        <h3>Camping Tent 4-Person</h3>
+                        <p><strong>Price:</strong> ₹299/day</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <div class="calendar">
+                        <p><strong>Available Dates:</strong></p>
+                        <ul>
+                            <li>April 23–25, 2024</li>
+                            <li>May 1–3, 2024</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transaction-section hidden">
+                <h2>Transaction History</h2>
+                <div class="transaction-item">
+                    <p><strong>Rented:</strong> Sony Bluetooth Speaker</p>
+                    <p><strong>Date:</strong> March 15, 2024</p>
+                    <p><strong>Amount:</strong> ₹599</p>
+                    <p><strong>Status:</strong> Completed</p>
+                </div>
+                <div class="transaction-item">
+                    <p><strong>Rented:</strong> Portable Projector</p>
+                    <p><strong>Date:</strong> April 10, 2024</p>
+                    <p><strong>Amount:</strong> ₹799</p>
+                    <p><strong>Status:</strong> Completed</p>
+                </div>
+                <div class="transaction-item">
+                    <p><strong>Returned:</strong> GoPro Hero 10</p>
+                    <p><strong>Date:</strong> April 20, 2024</p>
+                    <p><strong>Amount:</strong> ₹0 (Deposit Refunded)</p>
+                    <p><strong>Status:</strong> Returned</p>
+                </div>
+            </div>
+
+            <div class="chat-section hidden">
+                <h2>Chat</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message received">
+                            <p>Hi Nitin, is the Sony Bluetooth Speaker still available for rent?</p>
+                            <p><small>March 10, 2024, 10:30 AM</small></p>
+                        </div>
+                        <div class="message sent">
+                            <p>Yes, it's available! You can rent it for ₹599 for the weekend.</p>
+                            <p><small>March 10, 2024, 10:35 AM</small></p>
+                        </div>
+                        <div class="message received">
+                            <p>Great, I'll book it now. Thanks!</p>
+                            <p><small>March 10, 2024, 10:40 AM</small></p>
+                        </div>
+                        <div class="message received">
+                            <p>Hey, the Portable Projector worked perfectly for my event. Thanks for the quick response!
+                            </p>
+                            <p><small>April 12, 2024, 3:15 PM</small></p>
+                        </div>
+                        <div class="message sent">
+                            <p>Glad to hear that! Let me know if you need anything else.</p>
+                            <p><small>April 12, 2024, 3:20 PM</small></p>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="chatInput" placeholder="Type a message...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    </div>
+    <script src="profile.js"></script>
 </body>
 
 </html>
