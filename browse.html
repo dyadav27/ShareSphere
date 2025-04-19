@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DD - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="browse.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">Desire<span>Drop</span></div>
+        <div class="navline"></div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#home"><span>Home</span></a></li>
+                <li><a href="#mylistings"><span>My Listings</span></a></li>
+                <li><a href="#transactions"><span>Transactions</span></a></li>
+                <li><a href="#how"><span>How We Work</span></a></li>
+                <li><a href="#contact"><span>Contact</span></a></li>
+                <li><a href="#contact"><span>FaQ</span></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="category-header">
+        <h2 class="red-hat-display-font">What are you looking for today?</h2>
+    </section>
+
+    <section class="carousel-container">
+        <div class="carousel" id="carousel">
+            <!-- Original Cards -->
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="clothes.jpg"" alt=" Clothes">
+                </div>
+                <p class="red-hat-display-font">Clothes</p>
+            </div>
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="musical_instruments.jpg" alt="Musical Instruments">
+                </div>
+                <p class="red-hat-display-font">Musical Instruments</p>
+            </div>
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="books.jpg" alt="Books">
+                </div>
+                <p class="red-hat-display-font">Books</p>
+            </div>
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="tools.jpg" alt="Tools">
+                </div>
+                <p class="red-hat-display-font">Tools</p>
+            </div>
+            <div class="category-more" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="we_have_more.jpg" alt="More">
+                </div>
+                <p class="more-text">More Coming Soon...</p>
+            </div>
+
+            <!-- Duplicates for Infinite Scroll -->
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="clothes.jpg"" alt=" Clothes">
+                </div>
+                <p class="red-hat-display-font">Clothes</p>
+            </div>
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="musical_instruments.jpg" alt="Musical Instruments">
+                </div>
+                <p class="red-hat-display-font">Musical Instruments</p>
+            </div>
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="books.jpg" alt="Books">
+                </div>
+                <p class="red-hat-display-font">Books</p>
+            </div>
+            <div class="category-card" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="tools.jpg" alt="Tools">
+                </div>
+                <p class="red-hat-display-font">Tools</p>
+            </div>
+            <div class="category-more" onclick="location.href='#'">
+                <div class="category-image-wrapper">
+                    <img src="we_have_more.jpg" alt="More">
+                </div>
+                <p class="more-text">More Coming Soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">Rental Info</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="#">Watch</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Online Stop</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Create</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ensure the carousel is wide enough to prevent gaps
+        const carousel = document.getElementById('carousel');
+        const cards = document.querySelectorAll('.category-card, .category-more');
+        const cardWidth = cards[0].offsetWidth + 30; // Card width + margin
+        const totalWidth = cardWidth * cards.length;
+        carousel.style.width = `${totalWidth}px`;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - Full Glow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 153, 0.3), transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(0, 245, 160, 0.25), transparent 50%),
+                  #ffffff;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .faq-card {
+      background: #f5f5f5;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      padding: 24px 32px;
+      box-shadow: 6px 6px 0 #000;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .question {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .answer {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Color variants */
+    .green {
+      background-color: #00F5A0;
+      color: #000;
+    }
+
+    .yellow {
+      background-color: #FFEE58;
+    }
+
+    .gray {
+      background-color: #EDEDED;
+    }
+
+    .black {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .black .answer {
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-card green">
+      <div class="question">How do I start borrowing items?</div>
+      <div class="answer">Sign up for a free account, verify your identity, and start browsing items. Once you find something you like, send a request to the owner.</div>
+    </div>
+
+    <div class="faq-card black">
+      <div class="question">What are the deposit and payment methods?</div>
+      <div class="answer">Payments are handled via Stripe or PayPal. A refundable deposit is held during the rental and returned upon successful return of the item.</div>
+    </div>
+
+    <div class="faq-card yellow">
+      <div class="question">How do I list my items for rent?</div>
+      <div class="answer">Go to your profile, click “List Item”, and fill out the form with item details, availability, and pricing. Add photos for better visibility.</div>
+    </div>
+
+    <div class="faq-card gray">
+      <div class="question">What happens if an item is damaged?</div>
+      <div class="answer">Our platform covers basic insurance for certain items. Report any damage immediately—owners may retain the deposit, or we’ll mediate a fair resolution.</div>
+    </div>
+
+    <div class="faq-card green">
+      <div class="question">How do I edit my profile or account settings?</div>
+      <div class="answer">Log in, navigate to your profile, and click the “Edit Profile” button. You can update your contact info, bio, and payment methods from there.</div>
+    </div>
+
+    <div class="faq-card black">
+      <div class="question">What if there's a conflict with a borrower or lender?</div>
+      <div class="answer">Use the in-app dispute resolution system. Our support team typically responds within 24 hours to help mediate and resolve issues fairly.</div>
+    </div>
+
+    <div class="faq-card yellow">
+      <div class="question">Is it safe to rent items from strangers?</div>
+      <div class="answer">Yes! All users are identity-verified, and we offer secure payment handling, deposits, and item tracking to keep the process safe and transparent.</div>
+    </div>
+
+    <div class="faq-card gray">
+      <div class="question">How do returns and late fees work?</div>
+      <div class="answer">Items must be returned by the agreed time. Late returns may incur additional charges. Communication is key—contact the owner if you're running late.</div>
+    </div>
+
+    <div class="faq-card green">
+      <div class="question">How can I track my transactions?</div>
+      <div class="answer">Go to your dashboard and view your rental history, current items, and payment records under the “Transactions” tab.</div>
+    </div>
+
+    <div class="faq-card black">
+      <div class="question">Can I cancel a rental before it starts?</div>
+      <div class="answer">Yes, you can cancel up to 24 hours before the rental begins for a full refund. Cancellations within 24 hours may incur a fee.</div>
+    </div>
+  </div>
+</body>
+</html>

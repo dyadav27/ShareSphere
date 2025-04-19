@@ -1,0 +1,215 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://www.transparenttextures.com/patterns/whirlpool.png') repeat; /* Whirlpool texture */
+}
+
+
+.logo{
+    margin-left: 5%;
+}
+.logo>span{
+    background-color: #000;
+    color: #f5f5f3;
+    padding: 5px;
+    margin-left: 1px;
+    border-radius: 8px;
+}
+
+.navline{
+    height: 4px;
+    width: 10%;
+    margin: 5%;
+    background-color: #211b1b87;
+    border-radius: 2px;
+}
+.navbar {
+    background-color: #f5f5f3;
+    padding:8px 0px 8px 0px;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    gap: 5px;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    transform: translateY(-4px);
+}
+
+
+.category-header {
+    padding: 40px 20px 20px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    background-color: rgb(0, 255, 170);
+    color: #2a2c2c;
+    margin-top: 2.5rem; /* Offset for fixed navbar */
+
+    
+}
+
+.carousel-container {
+    max-width: 100vw;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+    background: url('whirlpool.png') repeat;
+}
+
+.carousel {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.category-card {
+    flex: 0 0 283px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: scale(1.03);
+}
+
+.category-image-wrapper {
+    width: 283px;
+    height: 283px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.category-card img {
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+    font-family: 'Red Hat Display', sans-serif;
+    text-align: center;
+}
+
+.category-more {
+    flex: 0 0 283px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: url('https://www.transparenttextures.com/patterns/whirlpool.png') repeat;
+}
+
+.category-more:hover {
+    transform: scale(1.03);
+}
+
+.category-more img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.more-text {
+    margin: 0;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Red Hat Display', sans-serif;
+    text-align: center;
+    width: fit-content;
+    margin-top: 10px;
+    background: url('https://www.transparenttextures.com/patterns/whirlpool.png') repeat;
+}
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    margin: 10px;
+  }
+  
+  .footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ccc;
+  }
