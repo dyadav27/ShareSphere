@@ -91,14 +91,13 @@ body {
     gap: 15px;
 }
 .circles {
-    position: absolute;
     display: flex;
-}
- .circles {
+
     position: relative;
     width: max-content;
     height: 30px;
 }
+
 
 .feature-card1 .circles div {
     position: absolute;
@@ -573,7 +572,7 @@ body {
     font-size: 18px;
   }
 
-  .green { background-color: #b8f1c1; }
+  .green { background-color: #30FFA5; }
   .black { background-color: #1a1a1a; color: white; }
   .purple { background-color: #e4d3fc; }
   .yellow { background-color: #fffacb; }

@@ -1,0 +1,147 @@
+        .container {
+         display: flex;   
+            margin-top: 7%;
+        }
+
+        .sidebar {
+            width: 60px;
+            background: #f5f5f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .sidebar img,
+        .sidebar i {
+            width: 24px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        .main{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+        }
+        
+        .profile-section {
+            background: #fff;
+            color: #222;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 20px;
+            width: 300px;
+        }
+        
+        .profile-section button {
+            background: #30FFA5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .info-box {
+            background: #f1f1f1;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .pp-content-section
+        {
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            position: relative;
+            
+        }
+        
+        .education img{
+            position: absolute;
+            top: 0;
+            left: 28.5%;
+            height: 134px;
+            border-radius: 30px 10px 10px 30px;
+        }
+
+        .skills,
+        .education {
+            position: relative;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .skill-tag {
+            background: #30FFA5;
+            color: #222;
+            border-radius: 20px;
+            padding: 8px 16px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+
+        .notes-section {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            border-radius: 15px;
+
+          }
+          
+          .note {
+            width: 25%;
+            padding: 20px;
+            border-radius: 16px;
+            color: black;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            
+            gap: 10px;
+          }
+          
+          .note h4 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 5px;
+          }
+          
+          .note ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          
+          .note ul li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+          }
+          
+          /* Themed backgrounds */
+          .note.green {
+            background-color: #30FFA5;
+          }
+          
+          .note.black {
+            background-color: #1a1a1a;
+            color: white;
+          }
+          
+          .note.yellow {
+            background-color: #fffacb;
+          }
+          
