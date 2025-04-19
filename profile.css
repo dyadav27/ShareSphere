@@ -1,11 +1,4 @@
-        .pp-body{
-            background-image: repeating-linear-gradient(45deg,
-            #f9f9f9,
-            #f9f9f9 20px,
-            #f2f2f2 20px,
-            #f2f2f2 200px);
-  
-        }
+
         .container {
          display: flex;   
             margin-top: 7%;
