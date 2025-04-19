@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesireDrop - Rent Smarter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body class="l-body">
+    <img src="login.png" class="l-login-img">
+    <main id="login-modal" class="l-modal">
+        <div class="l-modal-container">
+            <span class="l-close-btn" onclick="window.location.href = '../index.html';">&times;</span>
+
+            <!-- Sign-In Section -->
+            <div class="l-signin-section" id="signin-section" style="display: flex;">
+                <div class="l-login-heading">
+                    <h1>Welcome Back to DesireDrop!</h1>
+                    <span>Smart, seamless renting made simple — log in to access your listings and deals.</span>
+                </div>
+                <div class="l-form-content">
+                    <div class="l-input-container">
+                        <input type="text" placeholder="Username" class="l-form-input signin-username">
+                        <input type="password" placeholder="Password" class="l-form-input signin-password">
+                        <a href="/forgot-password" class="forgot-password-link">Forgot your password?</a>
+                    </div>
+                    <div class="l-button-container">
+                        <button type="button" class="l-btn signin-btn" id="signin-submit-btn"
+                            onclick="handleLogin()">Sign In</button>
+                        <button type="button" class="l-btn signup-btn" id="signup-toggle-btn">Sign Up</button>
+                        <div class="l-separator">
+                            <hr><span>or continue with</span>
+                            <hr>
+                        </div>
+                        <div class="l-social-signin">
+                            <div><img src="g.png" alt="Google"></div>
+                            <div><img src="w.png" alt="Windows"></div>
+                            <div><img src="f.png" alt="Facebook"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign-Up Section -->
+            <div class="l-signup-section" id="signup-section" style="display: none;">
+                <div class="l-login-heading">
+                    <h1>Create Your DesireDrop Account</h1>
+                    <span>Discover better rentals, faster. Sign up and start your journey today.</span>
+                </div>
+                <div class="l-form-content">
+                    <div class="l-input-container">
+                        <input type="email" placeholder="Email" class="l-form-input signup-email">
+                        <input type="password" placeholder="Password" class="l-form-input signup-password">
+                        <input type="password" placeholder="Confirm Password"
+                            class="l-form-input signup-confirm-password">
+                    </div>
+                    <div class="l-button-container">
+                        <button type="button" class="l-btn signup-submit-btn" id="signup-submit-button">Sign Up</button>
+                        <button type="button" class="l-btn back-btn" id="signin-back-toggle">Back to Sign In</button>
+                        <div class="l-separator">
+                            <hr><span>or continue with</span>
+                            <hr>
+                        </div>
+                        <div class="l-social-signin">
+                            <div><img src="../images/g.png" alt="Google"></div>
+                            <div><img src="../images/w.png" alt="Windows"></div>
+                            <div><img src="../images/f.png" alt="Facebook"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
