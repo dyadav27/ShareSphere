@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DesireDrop Listings</title>
+  <link rel="stylesheet" href="listing.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .enhanced-modal {
+      padding: 30px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .modal-header img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-title-info h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .modal-title-info p {
+      margin: 4px 0;
+      color: #555;
+    }
+
+    .modal-section {
+      margin-bottom: 20px;
+    }
+
+    .modal-section h3 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .modal-section p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .transaction-sequence {
+      padding-left: 20px;
+      color: #333;
+      list-style-type: decimal;
+    }
+
+    .close-btn {
+      font-size: 28px;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      color: #333;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #e74c3c;
+    }
+
+    /* Transaction form styles */
+    .transaction-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .transaction-form label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .transaction-form input,
+    .transaction-form select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .transaction-form input:focus,
+    .transaction-form select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+    .payment-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .payment-option {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .payment-option.selected {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    .payment-option:hover {
+      background-color: #e0e0e0;
+    }
+
+    .transaction-form button {
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s;
+    }
+
+    .transaction-form button:hover {
+      background-color: #218838;
+    }
+
+    .transaction-form .terms {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .transaction-form .terms input {
+      width: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Desire<span>Drop</span></div>
+    <div class="navline"></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home"><span>Home</span></a></li>
+        <li><a href="#mylistings"><span>My Listings</span></a></li>
+        <li><a href="#transactions"><span>Transactions</span></a></li>
+        <li><a href="#how"><span>How We Work</span></a></li>
+        <li><a href="#contact"><span>Contact</span></a></li>
+        <li><a href="#contact"><span>FaQ</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section>
+      <h1>Available Listings</h1>
+      <div class="search-bar">
+        <div class="search">
+          <input type="text" placeholder="Search items or locations...">
+          <button class="srcbtn">Search</button>
+        </div>
+        <div class="filters">
+          <select>
+            <option selected disabled>Category</option>
+            <option>Camping</option>
+            <option>Tools</option>
+            <option>Electronics</option>
+          </select>
+          <select>
+            <option selected disabled>Condition</option>
+            <option>New</option>
+            <option>Like New</option>
+            <option>Used</option>
+          </select>
+          <select>
+            <option selected disabled>Location</option>
+            <option>San Francisco</option>
+            <option>Los Angeles</option>
+            <option>New York</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="card" data-item="tent">
+        <img src="./tent.webp" alt="Camping Tent">
+        <div class="card-content">
+          <div class="card-title">Camping Tent</div>
+          <div class="card-text">San Francisco</div>
+          <div class="card-text">Condition: Like New</div>
+          <div class="rating">⭐ 4.5</div>
+          <div class="price">Free to Borrow</div>
+          <button class="view-item-btn">View Item</button>
+        </div>
+      </div>
+      <div class="card" data-item="drill">
+        <img src="drill.jpeg" alt="Electric Drill">
+        <div class="card-content">
+          <div class="card-title">Electric Drill</div>
+          <div class="card-text">Los Angeles</div>
+          <div class="card-text">Condition: Used</div>
+          <div class="rating">⭐ 4.2</div>
+          <div class="price">Free to Borrow</div>
+          <button class="view-item-btn">View Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="itemModal">
+    <div class="modal-content enhanced-modal">
+      <span class="close-btn" aria-label="Close modal">×</span>
+      <div class="modal-header">
+        <img id="modal-item-image" src="" alt="Item Image">
+        <div class="modal-title-info">
+          <h2 id="modal-item-name">Item Name</h2>
+          <p id="modal-location">📍 Location</p>
+          <p id="modal-condition">🛠️ Condition</p>
+          <p id="modal-price">💰 Price</p>
+        </div>
+      </div>
+      <div class="modal-section" id="renter-details">
+        <h3>👤 Renter Details</h3>
+        <p id="modal-renter-name">Name: </p>
+        <p id="modal-renter-email">Email: </p>
+        <p id="modal-renter-rating">Rating: ⭐ </p>
+      </div>
+      <div class="modal-section" id="modal-description">
+        <h3>📝 Description</h3>
+        <p id="modal-description-text"></p>
+      </div>
+      <div class="modal-section" id="transaction-sequence">
+        <h3>📋 Transaction Process</h3>
+        <form class="transaction-form" id="transaction-form">
+          <div>
+            <label for="borrower-name">Your Name</label>
+            <input type="text" id="borrower-name" placeholder="Enter your full name" required>
+          </div>
+          <div>
+            <label for="borrower-email">Your Email</label>
+            <input type="email" id="borrower-email" placeholder="Enter your email" required>
+          </div>
+          <div>
+            <label for="borrow-duration">Borrowing Duration</label>
+            <select id="borrow-duration" required>
+              <option value="" disabled selected>Select duration</option>
+              <option value="1-day">1 Day</option>
+              <option value="3-days">3 Days</option>
+              <option value="1-week">1 Week</option>
+              <option value="2-weeks">2 Weeks</option>
+            </select>
+          </div>
+          <div>
+            <label>Delivery Preference</label>
+            <select id="delivery-preference" required>
+              <option value="" disabled selected>Select preference</option>
+              <option value="meetup">Meetup</option>
+              <option value="delivery">Delivery</option>
+            </select>
+          </div>
+          <div>
+            <label>Payment Method</label>
+            <div class="payment-options" id="payment-options">
+              <div class="payment-option" data-method="none">None (Free)</div>
+              <div class="payment-option" data-method="credit-card">Credit Card</div>
+              <div class="payment-option" data-method="paypal">PayPal</div>
+            </div>
+          </div>
+          <div class="terms">
+            <input type="checkbox" id="terms-agree" required>
+            <label for="terms-agree">I agree to the borrowing terms and conditions</label>
+          </div>
+          <button type="submit">Submit Transaction Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Item data
+    const items = {
+      tent: {
+        name: "Camping Tent",
+        location: "San Francisco",
+        condition: "Like New",
+        price: "Free to Borrow",
+        image: "./tent.webp",
+        description: "4-person camping tent, used only once. Waterproof and easy to set up.",
+        renter: {
+          name: "John Doe",
+          email: "john@example.com",
+          rating: "4.5"
+        },
+        requiresDeposit: false
+      },
+      drill: {
+        name: "Electric Drill",
+        location: "Los Angeles",
+        condition: "Used",
+        price: "Free to Borrow",
+        image: "drill.jpeg",
+        description: "Cordless electric drill with multiple bits. Battery lasts up to 2 hours.",
+        renter: {
+          name: "Jane Smith",
+          email: "jane@example.com",
+          rating: "4.2"
+        },
+        requiresDeposit: true,
+        depositAmount: "20"
+      }
+    };
+
+    // Modal elements
+    const modal = document.getElementById('itemModal');
+    const closeBtn = document.querySelector('.close-btn');
+    const viewItemBtns = document.querySelectorAll('.view-item-btn');
+    const transactionForm = document.getElementById('transaction-form');
+    const paymentOptions = document.querySelectorAll('.payment-option');
+
+    // Function to populate modal
+    function populateModal(itemId) {
+      const item = items[itemId];
+      if (item) {
+        document.getElementById('modal-item-image').src = item.image;
+        document.getElementById('modal-item-image').alt = item.name;
+        document.getElementById('modal-item-name').textContent = item.name;
+        document.getElementById('modal-location').textContent = `📍 ${item.location}`;
+        document.getElementById('modal-condition').textContent = `🛠️ ${item.condition}`;
+        document.getElementById('modal-price').textContent = `💰 ${item.price}${item.requiresDeposit ? ` ($${item.depositAmount} deposit)` : ''}`;
+        document.getElementById('modal-renter-name').textContent = `Name: ${item.renter.name}`;
+        document.getElementById('modal-renter-email').textContent = `Email: ${item.renter.email}`;
+        document.getElementById('modal-renter-rating').textContent = `Rating: ⭐ ${item.renter.rating}`;
+        document.getElementById('modal-description-text').textContent = item.description;
+
+        // Update payment options visibility
+        const noneOption = document.querySelector('.payment-option[data-method="none"]');
+        const paidOptions = document.querySelectorAll('.payment-option[data-method="credit-card"], .payment-option[data-method="paypal"]');
+        if (item.requiresDeposit) {
+          noneOption.style.display = 'none';
+          paidOptions.forEach(option => option.style.display = 'inline-block');
+        } else {
+          noneOption.style.display = 'inline-block';
+          paidOptions.forEach(option => option.style.display = 'none');
+          noneOption.classList.add('selected');
+        }
+      }
+    }
+
+    // Payment option selection
+    paymentOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        paymentOptions.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+      });
+    });
+
+    // Form submission
+    transactionForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const borrowerName = document.getElementById('borrower-name').value;
+      const borrowerEmail = document.getElementById('borrower-email').value;
+      const borrowDuration = document.getElementById('borrow-duration').value;
+      const deliveryPreference = document.getElementById('delivery-preference').value;
+      const selectedPayment = document.querySelector('.payment-option.selected')?.dataset.method;
+      const termsAgreed = document.getElementById('terms-agree').checked;
+
+      if (!selectedPayment) {
+        alert('Please select a payment method.');
+        return;
+      }
+
+      if (termsAgreed) {
+        // In a real app, send this data to a backend
+        console.log('Transaction Request:', {
+          borrowerName,
+          borrowerEmail,
+          borrowDuration,
+          deliveryPreference,
+          paymentMethod: selectedPayment
+        });
+        alert('Transaction request submitted successfully!');
+        modal.style.display = 'none';
+        transactionForm.reset();
+        paymentOptions.forEach(opt => opt.classList.remove('selected'));
+      }
+    });
+
+    // Event listeners for view item buttons
+    viewItemBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
+        const itemId = card.dataset.item;
+        populateModal(itemId);
+        modal.style.display = 'flex';
+      });
+    });
+
+    // Close modal on close button click
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      transactionForm.reset();
+      paymentOptions.forEach(opt => opt.classList.remove('selected'));
+    });
+
+    // Close modal on outside click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        transactionForm.reset();
+        paymentOptions.forEach(opt => opt.classList.remove('selected'));
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        transactionForm.reset();
+        paymentOptions.forEach(opt => opt.classList.remove('selected'));
+      }
+    });
+  </script>
+</body>
+
+</html>
