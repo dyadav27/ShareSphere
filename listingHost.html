@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesireDrop Listings</title>
+    <link rel="stylesheet" href="listing.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">Desire<span>Drop</span></div>
+        <div class="navline"></div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#home"><span>Home</span></a></li>
+                <li><a href="#mylistings"><span>My Listings</span></a></li>
+                <li><a href="#transactions"><span>Transactions</span></a></li>
+                <li><a href="#how"><span>How We Work</span></a></li>
+                <li><a href="#contact"><span>Contact</span></a></li>
+                <li><a href="#contact"><span>FaQ</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div>
+            <h1>Available Listings</h1>
+            <div class="search-bar">
+                <div class="search">
+                    <input type="text" placeholder="Search items or locations...">
+                    <button class="srcbtn">Search</button>
+                </div>
+                <div class="filters">
+                    <select>
+                        <option selected disabled>Category</option>
+                        <option>Camping</option>
+                        <option>Tools</option>
+                        <option>Electronics</option>
+                    </select>
+                    <select>
+                        <option selected disabled>Condition</option>
+                        <option>New</option>
+                        <option>Like New</option>
+                        <option>Used</option>
+                    </select>
+                    <select>
+                        <option selected disabled>Location</option>
+                        <option>San Francisco</option>
+                        <option>Los Angeles</option>
+                        <option>New York</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid">
+            <div class="card">
+                <img src="./tent.webp" alt="Camping Tent">
+                <div class="card-content">
+                    <div class="card-title">Camping Tent</div>
+                    <div class="card-text">San Francisco</div>
+                    <div class="card-text">Condition: Like New</div>
+                    <div class="rating">⭐ 4.5</div>
+                    <div class="price">Free to Borrow</div>
+                    <button>View Item</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="drill.jpeg" alt="Electric Drill">
+                <div class="card-content">
+                    <div class="card-title">Electric Drill</div>
+                    <div class="card-text">Los Angeles</div>
+                    <div class="card-text">Condition: Used</div>
+                    <div class="rating">⭐ 4.2</div>
+                    <div class="price">Free to Borrow</div>
+                    <button>View Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
